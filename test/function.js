@@ -1,24 +1,22 @@
-/**
- * Created by UO on 2014/4/30 15:44.
- */
+const toJson = require("../index")
+  , fs = require("fs");
 
-var toJson = require("../lib/html2json").toJson;
+const html = fs.readFileSync("./test.html");
 
-var mapping = {
-    p: {
-        selector: "p#nv a",
-        foreach: {
-            name: function(elem){
-                return elem.text().trim().replace(" ", "");
-            },
-            url: {
-                selector: ".",
-                attr: "href"
-            }
-        }
+
+const mapping = {
+  results: {
+    selector: ".result",
+    foreach: {
+      title: ".c-title>a",
+      media: function (element) {
+        let text = element.find(".c-author").text().trim();
+        return text.split(/[\n  ]+/)[0];
+      }
     }
+  }
 };
 
-toJson("http://www.baidu.com/", mapping, function(err, json){
-    console.log(json);
-});
+let json = toJson(html, mapping);
+
+console.log(json);

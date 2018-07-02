@@ -2,12 +2,14 @@
  * Created by UO on 2014/4/29 19:22.
  */
 
-var toJson = require("../lib/html2json").toJson;
+const toJson = require("../index")
+  , fs = require("fs");
 
-var mapping = {
-    title:"head title"
+const html = fs.readFileSync("./test.html");
+const mapping = {
+  "page-title": "head>title"
 };
 
-toJson("http://www.baidu.com/", mapping, function(err, json){
-    console.log(json);
-});
+let json = toJson(html, mapping);
+
+console.log(json);

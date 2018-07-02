@@ -7,20 +7,19 @@ Convert HTML to JSON library.
 ## Simple to use
 
 ```javascript
-var toJson = require("node-html2json").toJson;
+let toJson = require("node-html2json");
 
-toJson(url [, mapping], callback)```
+toJson(html, mapping)
+```
 
 hQuery is designed to convert html to json object, JQuery like.
 
 ```javascript
-var mapping = {
+let mapping = {
     title:"head title",
 };
 
-toJson("http://www.baidu.com", mapping, function(err, json){
-    console.log(json);
-});
+let json = toJson(mapping);
 ```
 
 ## Attribute
@@ -32,33 +31,30 @@ toJson("http://www.baidu.com", mapping, function(err, json){
 use foreach like this. Point `.` mean current element.
 
 ```javascript
-var mapping = {
-    p: {
-        selector: "p#nv a",
+const mapping = {
+    results: {
+        selector: ".result",
         foreach: {
-            name: ".",
+            title: ".c-title>a",
             url: {
-                selector: ".",
+                selector: ".c-title>a",
                 attr: "href"
             }
         }
-};
+    }
+}
 
-toJson("http://www.baidu.com", mapping, function(err, json){
-    console.log(json);
-});
 ```
 
 ## Function
 
-```javascript
-var mapping = {
-    title: function(elem){
-        return elem.text();
-    }
-};
+object value could be a function with an parameter "element", which is an cheerio object. 
 
-toJson("http://www.baidu.com", mapping, function(err, json){
-    console.log(json);
-});
+```javascript
+const mapping = {
+  title: function (element) {
+    let text = element.find("head>title").text().trim();
+    return text.split("_")[0];
+  }
+};
 ```
