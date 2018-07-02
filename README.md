@@ -1,13 +1,13 @@
 # html2json -- Convert Html to Json
 
-[![NPM](https://nodei.co/npm/node-html2json.png)](https://nodei.co/npm/html2json/)
+[![NPM](https://nodei.co/npm/node-html2json.png)](https://www.npmjs.com/package/node-html2json)
 
 Convert HTML to JSON library.
 
 ## Simple to use
 
 ```javascript
-let toJson = require("node-hquery");
+let toJson = require("node-html2json");
 
 toJson(html, mapping)
 ```
