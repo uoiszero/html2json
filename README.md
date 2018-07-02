@@ -16,7 +16,7 @@ html2json is designed to convert html to json object, JQuery like.
 
 ```javascript
 let mapping = {
-    title:"head title",
+  title:"head title",
 };
 
 let json = toJson(mapping);
@@ -32,16 +32,16 @@ use foreach like this. Point `.` mean current element.
 
 ```javascript
 const mapping = {
-    results: {
-        selector: ".result",
-        foreach: {
-            title: ".c-title>a",
-            url: {
-                selector: ".c-title>a",
-                attr: "href"
-            }
-        }
+  results: {
+    selector: ".result",
+    foreach: {
+      title: ".c-title>a",
+      url: {
+        selector: ".c-title>a",
+        attr: "href"
+      }
     }
+  }
 }
 
 ```
