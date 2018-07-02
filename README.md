@@ -12,7 +12,7 @@ let toJson = require("node-html2json");
 toJson(html, mapping)
 ```
 
-hQuery is designed to convert html to json object, JQuery like.
+html2json is designed to convert html to json object, JQuery like.
 
 ```javascript
 let mapping = {
