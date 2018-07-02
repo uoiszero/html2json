@@ -7,7 +7,7 @@ Convert HTML to JSON library.
 ## Simple to use
 
 ```javascript
-let toJson = require("node-html2json");
+let toJson = require("node-hquery");
 
 toJson(html, mapping)
 ```
