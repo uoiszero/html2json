@@ -62,4 +62,4 @@ fabric.properties
 .idea/
 .gitignore
 yarn.lock
-.node_modules/
+node_modules/
