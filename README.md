@@ -58,3 +58,22 @@ const mapping = {
   }
 };
 ```
+
+## Current Element
+use "." to represent the current element.
+
+```javascript
+const mapping = {
+  results: {
+    selector: ".result",
+    foreach: {
+      title: ".c-title>a",
+      id:{
+        selector: ".",
+        attr: "id"
+      }
+    }
+  }
+}
+
+```
