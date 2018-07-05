@@ -4,16 +4,20 @@ const toJson = require("../index")
 const html = fs.readFileSync("./test.html");
 
 const mapping = {
-    results: {
-        selector: ".result",
-        foreach: {
-            title: ".c-title>a",
-            url: {
-                selector: ".c-title>a",
-                attr: "href"
-            }
-        }
+  results: {
+    selector: ".result",
+    foreach: {
+      title: ".c-title>a",
+      url: {
+        selector: ".c-title>a",
+        attr: "href"
+      },
+      id: {
+        selector: ".",
+        attr: "id"
+      }
     }
+  }
 };
 
 let json = toJson(html, mapping);

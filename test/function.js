@@ -12,6 +12,10 @@ const mapping = {
       media: function (element) {
         let text = element.find(".c-author").text().trim();
         return text.split(/[\n  ]+/)[0];
+      },
+      id: {
+        selector: ".",
+        attr: "id"
       }
     }
   }
