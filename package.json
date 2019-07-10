@@ -6,7 +6,7 @@
         "email": "uo.is.zero@gmail.com"
     },
     "main": "index.js",
-    "version": "1.0.2",
+    "version": "1.0.3",
     "dependencies": {
         "cheerio": "^1.0.0-rc.2",
         "lodash": "^4.17.10"
