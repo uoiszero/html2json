@@ -9,26 +9,41 @@ Convert HTML to JSON library.
 ```javascript
 let toJson = require("node-html2json");
 
-toJson(html, mapping)
+//return a json object
+toJson(html, mapping);
 ```
 
 html2json is designed to convert html to json object, JQuery like.
 
 ```javascript
 let mapping = {
-  title:"head title",
+  title: "head>title"
 };
 
-let json = toJson(mapping);
+//json = {"title": "THE html title"}
+let json = toJson(html, mapping);
 ```
 
 ## Attribute
 
-`title:"head title"` get title element text by default. use `title:{selector:"head title", attr:"href"}` to get attributes.
+get title element text by default.
+
+```json
+title: "head>title"
+```
+
+to get attribute 'href'.
+
+```json
+title: {
+  selector: "some <a> Tag",
+  attr: "href"
+  }
+```
 
 ## Foreach
 
-use foreach like this. Point `.` mean current element.
+use foreach like this.
 
 ```javascript
 const mapping = {
@@ -42,24 +57,27 @@ const mapping = {
       }
     }
   }
-}
-
+};
 ```
 
 ## Function
 
-object value could be a function with an parameter "element", which is an cheerio object. 
+object value could be a function with an parameter "element", which is an cheerio object.
 
 ```javascript
 const mapping = {
-  title: function (element) {
-    let text = element.find("head>title").text().trim();
+  title: function(element) {
+    let text = element
+      .find("head>title")
+      .text()
+      .trim();
     return text.split("_")[0];
   }
 };
 ```
 
 ## Current Element
+
 use "." to represent the current element.
 
 ```javascript
@@ -68,12 +86,11 @@ const mapping = {
     selector: ".result",
     foreach: {
       title: ".c-title>a",
-      id:{
+      id: {
         selector: ".",
         attr: "id"
       }
     }
   }
-}
-
+};
 ```
