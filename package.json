@@ -5,6 +5,9 @@
         "name": "Alex Yue",
         "email": "uo.is.zero@gmail.com"
     },
+    "scripts": {
+        "test": "mocha"
+    },
     "main": "index.js",
     "version": "2.0.1",
     "dependencies": {
