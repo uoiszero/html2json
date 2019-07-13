@@ -94,3 +94,9 @@ const mapping = {
   }
 };
 ```
+
+## Test Useage
+
+```shell
+  yarn test
+```
