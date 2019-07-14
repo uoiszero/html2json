@@ -28,17 +28,21 @@ let json = toJson(html, mapping);
 
 get title element text by default.
 
-```json
-title: "head>title"
+```javascript
+{
+  title: "head>title";
+}
 ```
 
 to get attribute 'href'.
 
-```json
-title: {
-  selector: "some <a> Tag",
-  attr: "href"
+```javascript
+{
+  title: {
+    selector: "some <a> Tag",
+    attr: "href"
   }
+}
 ```
 
 ## Foreach
