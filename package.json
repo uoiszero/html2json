@@ -1,5 +1,5 @@
 {
-    "version": "2.1.0",
+    "version": "2.1.1",
     "name": "node-html2json",
     "license": "MIT",
     "description": "html2json's convert html to json library.",
